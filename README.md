@@ -69,6 +69,7 @@ as such:
 
 ```swift
 TreePrinter.printTree(root: treeRoot, options: treePrinterOptions)
+// alternatively:
 "\(tree: treeRoot, options: treePrinterOptions)")
 ```
 
