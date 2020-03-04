@@ -6,8 +6,7 @@ A small library to convert a tree structure into a `String`, designed to be used
 
 1. Include the framework in your project
 2. Conform your type to be `TreeRepresentable`
-3a. `let treeString = TreePrinter.printTree(root: rootNodeOfYourTree)`
-3b. `let treeString = "\(tree: rootNodeOfYourTree)"`
+3. `let treeString = TreePrinter.printTree(root: rootNodeOfYourTree)` or `let treeString = "\(tree: rootNodeOfYourTree)"`
 
 # Example
 
