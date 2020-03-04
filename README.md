@@ -6,7 +6,8 @@ A small library to convert a tree structure into a `String`, designed to be used
 
 1. Include the framework in your project
 2. Conform your type to be `TreeRepresentable`
-3. `let treeString = TreePrinter.printTree(root: rootNodeOfYourTree)`
+3a. `let treeString = TreePrinter.printTree(root: rootNodeOfYourTree)`
+3b. `let treeString = "\(tree: rootNodeOfYourTree)"`
 
 # Example
 
@@ -34,6 +35,7 @@ Then, you can easily debug a tree as such:
 func someFunctionYoureTesting() {
     var treeRoot: SomeTreeStructure = /* Your tree */
     print(TreePrinter.printTree(root: treeRoot))
+    // or alternatively: print("\(tree: treeRoot)")
 }
 ```
 
@@ -68,6 +70,7 @@ as such:
 
 ```swift
 TreePrinter.printTree(root: treeRoot, options: treePrinterOptions)
+"\(tree: treeRoot, options: treePrinterOptions)")
 ```
 
 # Installation

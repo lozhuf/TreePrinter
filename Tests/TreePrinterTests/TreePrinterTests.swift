@@ -451,6 +451,20 @@ class TreePrinterTests: XCTestCase {
         XCTAssertTrue(lines[15].starts(with: options.finalConnector))
     }
     
+    func testStringInterpolation() {
+        let tree = TreeNode(title: "Root",
+                            subNodes: [
+                                TreeNode(title: "Level One", subNodes: [
+                                    TreeNode(title: "Level Two A", subNodes: []),
+                                    TreeNode(title: "Level Two B", subNodes: [])
+                                ])
+                            ])
+        let options = TreePrinter.TreePrinterOptions(spacesPerDepth: 4, spacer: "-", verticalLine: "|", intermediateConnector: "*", finalConnector: "?", connectorSuffix: "!")
+
+        XCTAssertEqual("\(tree: tree)", TreePrinter.printTree(root: tree))
+        XCTAssertEqual("\(tree: tree, options: options)", TreePrinter.printTree(root: tree, options: options))
+    }
+    
     private func getMatchCount(_ pattern: String, in haystack: String) -> Int {
         let regex = try! NSRegularExpression(pattern: pattern,
                                              options: .ignoreMetacharacters)

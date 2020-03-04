@@ -129,3 +129,16 @@ public class TreePrinter {
         return retVal
     }
 }
+
+public extension String.StringInterpolation {
+    
+    /// Creates a `String` representation of a tree structure.
+    /// - Parameters:
+    ///   - tree: Root of the tree; must conform to `TreeReprsentable`
+    ///   - options: Optional set of options to configure how the output looks
+    mutating func appendInterpolation<Tree: TreeRepresentable>(tree: Tree,
+                                                               options: TreePrinter.TreePrinterOptions = TreePrinter.TreePrinterOptions())
+    {
+        appendInterpolation(TreePrinter.printTree(root: tree, options: options))
+    }
+}
